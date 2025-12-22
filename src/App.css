@@ -1,0 +1,26 @@
+/**
+ * @github_comment: "Updated App.css for Tailwind v4 compatibility. Replaced 
+ * legacy @tailwind directives with @import and added @reference to allow 
+ * @apply to recognize utility classes like ease-in-out."
+ */
+
+@import "tailwindcss";
+
+/* In v4, if you use @apply in a CSS file, you need to reference 
+   the tailwind source so the compiler knows what the classes are.
+*/
+@reference "tailwindcss";
+
+@layer components {
+  .tows-card-transition {
+    @apply transition-all duration-300 ease-in-out;
+  }
+}
+
+/* Custom Zoho Branding Colors for v4 */
+@theme {
+  --color-zoho-blue: #1a73e8;
+  --color-zoho-red: #e53935;
+  --color-zoho-yellow: #fbc02d;
+  --color-zoho-green: #43a047;
+}
